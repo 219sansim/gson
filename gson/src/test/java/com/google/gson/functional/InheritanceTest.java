@@ -64,10 +64,7 @@ public class InheritanceTest {
 
   @Test
   public void testSubClassDeserialization() {
-    String json = "{\"value\":5,\"primitive1\":{\"longValue\":10,\"intValue\":20,"
-        + "\"booleanValue\":false,\"stringValue\":\"stringValue\"},\"primitive2\":"
-        + "{\"longValue\":30,\"intValue\":40,\"booleanValue\":true,"
-        + "\"stringValue\":\"stringValue\"}}";
+    String json = "{\"value\":5,\"primitive1\":{\"booleanValue\":false,\"intValue\":20,\"longValue\":10,\"stringValue\":\"stringValue\"},\"primitive2\":{\"booleanValue\":true,\"intValue\":40,\"longValue\":30,\"stringValue\":\"stringValue\"}}";
     SubTypeOfNested target = gson.fromJson(json, SubTypeOfNested.class);
     assertThat(target.getExpectedJson()).isEqualTo(json);
   }

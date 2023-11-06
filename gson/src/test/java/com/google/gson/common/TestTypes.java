@@ -127,9 +127,9 @@ public class TestTypes {
     public String getExpectedJson() {
       StringBuilder sb = new StringBuilder();
       sb.append("{");
-      sb.append("\"longValue\":").append(longValue).append(",");
-      sb.append("\"intValue\":").append(intValue).append(",");
       sb.append("\"booleanValue\":").append(booleanValue).append(",");
+      sb.append("\"intValue\":").append(intValue).append(",");
+      sb.append("\"longValue\":").append(longValue).append(",");
       sb.append("\"stringValue\":\"").append(stringValue).append("\"");
       sb.append("}");
       return sb.toString();
@@ -182,9 +182,9 @@ public class TestTypes {
     public String getExpectedJson() {
       StringBuilder sb = new StringBuilder();
       sb.append("{");
-      sb.append("\"longValue\":").append(longValue).append(",");
+      sb.append("\"booleanValue\":").append(booleanValue).append(",");
       sb.append("\"intValue\":").append(intValue).append(",");
-      sb.append("\"booleanValue\":").append(booleanValue);
+      sb.append("\"longValue\":").append(longValue);
       sb.append("}");
       return sb.toString();
     }
