@@ -51,6 +51,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -263,7 +264,12 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     Class<?> originalRaw = raw;
     while (raw != Object.class) {
       Field[] fields = raw.getDeclaredFields();
-
+      Arrays.sort(fields, new Comparator<Field>() {
+            @Override
+            public int compare(Field f1, Field f2) {
+                return f1.getName().compareTo(f2.getName());
+            }
+        });
       // For inherited fields, check if access to their declaring class is allowed
       if (raw != originalRaw && fields.length > 0) {
         FilterResult filterResult = ReflectionAccessFilterHelper.getFilterResult(reflectionFilters, raw);

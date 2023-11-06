@@ -218,9 +218,7 @@ public class ObjectTest {
 
   @Test
   public void testNestedDeserialization() {
-    String json = "{\"primitive1\":{\"longValue\":10,\"intValue\":20,\"booleanValue\":false,"
-        + "\"stringValue\":\"stringValue\"},\"primitive2\":{\"longValue\":30,\"intValue\":40,"
-        + "\"booleanValue\":true,\"stringValue\":\"stringValue\"}}";
+    String json = "{\"primitive1\":{\"booleanValue\":false,\"intValue\":20,\"longValue\":10,\"stringValue\":\"stringValue\"},\"primitive2\":{\"booleanValue\":true,\"intValue\":40,\"longValue\":30,\"stringValue\":\"stringValue\"}}";
     Nested target = gson.fromJson(json, Nested.class);
     assertThat(target.getExpectedJson()).isEqualTo(json);
   }
@@ -260,8 +258,7 @@ public class ObjectTest {
 
   @Test
   public void testNullFieldsDeserialization() {
-    String json = "{\"primitive1\":{\"longValue\":10,\"intValue\":20,\"booleanValue\":false"
-        + ",\"stringValue\":\"stringValue\"}}";
+    String json = "{\"primitive1\":{\"booleanValue\":false,\"intValue\":20,\"longValue\":10,\"stringValue\":\"stringValue\"}}";
     Nested target = gson.fromJson(json, Nested.class);
     assertThat(target.getExpectedJson()).isEqualTo(json);
   }

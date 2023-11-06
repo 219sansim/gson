@@ -46,9 +46,7 @@ public final class GraphAdapterBuilderTest {
         .registerOn(gsonBuilder);
     Gson gson = gsonBuilder.create();
 
-    assertEquals("{'0x1':{'name':'ROCK','beats':'0x2'}," +
-        "'0x2':{'name':'SCISSORS','beats':'0x3'}," +
-        "'0x3':{'name':'PAPER','beats':'0x1'}}",
+    assertEquals("{'0x1':{'beats':'0x2','name':'ROCK'},'0x2':{'beats':'0x3','name':'SCISSORS'},'0x3':{'beats':'0x1','name':'PAPER'}}",
         gson.toJson(rock).replace('"', '\''));
   }
 
@@ -140,9 +138,7 @@ public final class GraphAdapterBuilderTest {
         .registerOn(gsonBuilder);
     Gson gson = gsonBuilder.create();
 
-    assertEquals("{'0x1':{'name':'Google','employees':['0x2','0x3']},"
-        + "'0x2':{'name':'Jesse','company':'0x1'},"
-        + "'0x3':{'name':'Joel','company':'0x1'}}",
+    assertEquals("{'0x1':{'employees':['0x2','0x3'],'name':'Google'},'0x2':{'company':'0x1','name':'Jesse'},'0x3':{'company':'0x1','name':'Joel'}}",
         gson.toJson(google).replace('"', '\''));
   }
 

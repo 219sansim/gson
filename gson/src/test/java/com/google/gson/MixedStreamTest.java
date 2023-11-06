@@ -37,16 +37,16 @@ public final class MixedStreamTest {
   private static final Car RED_MIATA = new Car("miata", 0xFF0000);
   private static final String CARS_JSON = "[\n"
       + "  {\n"
-      + "    \"name\": \"mustang\",\n"
-      + "    \"color\": 255\n"
+      + "    \"color\": 255,\n"
+      + "    \"name\": \"mustang\"\n"
       + "  },\n"
       + "  {\n"
-      + "    \"name\": \"bmw\",\n"
-      + "    \"color\": 0\n"
+      + "    \"color\": 0,\n"
+      + "    \"name\": \"bmw\"\n"
       + "  },\n"
       + "  {\n"
-      + "    \"name\": \"miata\",\n"
-      + "    \"color\": 16711680\n"
+      + "    \"color\": 16711680,\n"
+      + "    \"name\": \"miata\"\n"
       + "  }\n"
       + "]";
 
